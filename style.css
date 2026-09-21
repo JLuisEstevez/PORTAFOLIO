@@ -14,6 +14,21 @@ TOKENS
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
+  .hero__title {
+  /* Uso 'Space Grotesk' que es idéntica a mi mockup; si falla, salta a sans-serif limpia (nunca a Times New Roman) */
+  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;       /* Mayúsculas idénticas a tu mockup */
+  letter-spacing: 0.09em;          /* Separación limpia entre caracteres */
+  line-height: 1.08;
+  color: #f4f4f5 !important;       /* Blanco puro para contrastar sobre el banner negro */
+  font-size: clamp(2rem, 4.5vw + 0.8rem, 3.8rem);
+  margin-bottom: 1.5rem;
+  max-width: 650px;
+  min-height: 1.15em;
+  display: inline-block;
+}
+
   --fs-hero: clamp(2.25rem, 5vw + 1rem, 4.25rem);
   --fs-h2: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
   --fs-h3: clamp(1.125rem, 1vw + 0.9rem, 1.375rem);
@@ -28,6 +43,8 @@ TOKENS
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration: 0.25s;
 }
+
+
 
 /* ==========================================================================
 THEMES
@@ -439,7 +456,7 @@ BIOGRAFÍA & FOTO CIRCULAR (cafe.png) CON GLITCH ORIGINAL
 
 .hero__bio-divider {
   width: 1px;
-  height: 320px;
+  height: 390px;
   background-color: var(--border);
 }
 
@@ -490,10 +507,86 @@ BIOGRAFÍA & FOTO CIRCULAR (cafe.png) CON GLITCH ORIGINAL
   transition: filter var(--duration) var(--ease-out);
 }
 
-.hero__bio-photo:hover::after { opacity: 1; }
+/* ==========================================================================
+ANIMACIÓN DE PARPADEO OCULAR (2 rápidos, 1 lento y apertura final)
+========================================================================== */
+
+/* Al posar el cursor: se activa el tinte naranja */
+.hero__bio-photo:hover::after {
+  opacity: 1;
+}
+
+/* La foto pasa a color y ejecuta la secuencia del ojo */
 .hero__bio-photo:hover .hero__photo-img {
-  filter: grayscale(0%) contrast(125%) sepia(20%);
-  animation: glitch-anim 0.9s steps(2, end);
+  filter: grayscale(0%) contrast(115%);
+  /* 2.2 segundos totales, curva orgánica y se detiene abierta con forwards */
+  animation: eye-blink-sequence 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes eye-blink-sequence {
+  /* ESTADO INICIAL: Ojo abierto */
+  0% {
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transform: scale(1);
+  }
+
+  /* --- 1. PRIMER PARPADEO (Rápido) --- */
+  6% {
+    /* Párpados cerrados casi por completo */
+    clip-path: ellipse(100% 0% at 50% 50%);
+    transform: scale(0.99);
+  }
+  12% {
+    /* Rebote de apertura */
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transform: scale(1);
+  }
+
+  /* Pequeña pausa despierto */
+  18% {
+    clip-path: ellipse(100% 100% at 50% 50%);
+  }
+
+  /* --- 2. SEGUNDO PARPADEO (Rápido) --- */
+  24% {
+    clip-path: ellipse(100% 0% at 50% 50%);
+    transform: scale(0.99);
+  }
+  30% {
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transform: scale(1);
+  }
+
+  /* Pausa intermedia antes del guiño profundo */
+  38% {
+    clip-path: ellipse(100% 100% at 50% 50%);
+  }
+
+  /* --- 3. TERCER PARPADEO (Lento y pesado) --- */
+  50% {
+    /* Inicio del cierre pausado */
+    clip-path: ellipse(100% 15% at 50% 50%);
+  }
+  58% {
+    /* Ojo totalmente cerrado en reposo */
+    clip-path: ellipse(100% 0% at 50% 50%);
+    transform: scale(0.985);
+  }
+  68% {
+    /* Comienza a levantarse el párpado lentamente */
+    clip-path: ellipse(100% 30% at 50% 50%);
+  }
+  82% {
+    /* Apertura casi completa */
+    clip-path: ellipse(100% 85% at 50% 50%);
+    transform: scale(1);
+  }
+
+  /* --- APERTURA FINAL DEFINITIVA --- */
+  90%, 100% {
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transform: scale(1);
+  }
 }
 
 @keyframes glitch-anim {
@@ -897,4 +990,82 @@ COMMAND MENU (CMD + K)
   background-color: var(--border);
   padding: 0.1rem 0.3rem;
   border-radius: 2px;
+}
+
+
+/* ==========================================================================
+BARRA LATERAL DE REDES SOCIALES (EN COLUMNA - MOCKUP)
+========================================================================== */
+.social-sidebar {
+  position: fixed;
+  left: clamp(1rem, 2.5vw, 2.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Línea naranja vertical decorativa como en tu mockup */
+.social-sidebar__accent {
+  width: 2px;
+  height: 48px;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.4);
+}
+
+.social-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.social-sidebar__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  transition: color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  text-decoration: none;
+}
+
+/* Texto micro encima de cada logo (GitHub, LinkedIn, etc.) */
+.social-sidebar__label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: -0.02em;
+  opacity: 0.6;
+  transition: opacity var(--duration) var(--ease-out);
+  user-select: none;
+}
+
+.social-sidebar__link svg {
+  transition: stroke var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+/* Efecto hover */
+.social-sidebar__link:hover {
+  color: var(--text-primary);
+  transform: translateX(3px);
+}
+
+.social-sidebar__link:hover .social-sidebar__label {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.social-sidebar__link:hover svg {
+  stroke: var(--accent);
+}
+
+/* Ocultar en móviles para no tapar el texto en pantallas angostas */
+@media (max-width: 1024px) {
+  .social-sidebar {
+    display: none;
+  }
 }
