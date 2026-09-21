@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J Luis Estévez</title>
+  <meta name="description" content="Portafolio de J Luis Estévez, desarrollador frontend en formación con base en artes visuales e ingeniería industrial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="images/logo-blanco.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a href="#top" class="header__logo-link" aria-label="Ir al inicio">
+        <!-- Logo dinámico según el tema -->
+        <img src="images/logo-blanco.png" alt="Logo jotezte estudio" class="logo-spinner logo-theme--dark">
+        <img src="images/logo-negro.png" alt="Logo jotezte estudio" class="logo-spinner logo-theme--light">
+      </a>
+      
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#trabajo">Proyectos</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="availability" role="status">
+        <span class="availability__dot" aria-hidden="true"></span>
+        <span>Abierto a colaboraciones</span>
+      </div>
+
+      <!-- Selector de Sistema de Diseño (UI con Swatches) -->
+      <div class="theme-switcher" role="group" aria-label="Selector de tema">
+        <button type="button" class="theme-btn is-active" data-set-theme="industrial" title="Tema Industrial">
+          <span class="theme-btn__swatch swatch--industrial" aria-hidden="true"></span>
+          <span class="theme-btn__label">Oscuro</span>
+        </button>
+        <button type="button" class="theme-btn" data-set-theme="contrast" title="Tema Día">
+          <span class="theme-btn__swatch swatch--contrast" aria-hidden="true"></span>
+          <span class="theme-btn__label">Día</span>
+        </button>
+        <button type="button" class="theme-btn" data-set-theme="warm" title="Tema Crema">
+          <span class="theme-btn__swatch swatch--warm" aria-hidden="true"></span>
+          <span class="theme-btn__label">Crema</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-label="Presentación">
+      <!-- Franja Banner horizontal de extremo a extremo -->
+      <div class="hero-banner">
+        <div class="hero-banner__inner">
+          <p class="hero__eyebrow">Desarrollador web · Artista Visual</p>
+          
+          <!-- Título animado con efecto máquina de escribir -->
+          <h1 class="hero__title" aria-label="J Luis Estévez Salcedo">
+            <span class="typewriter-text" data-typewriter="J Luis Estévez Salcedo"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
+          </h1>
+
+          <p class="hero__lede">
+            Transformo requerimientos y prototipos en interfaces accesibles, fluidas y estructuradas con código mantenible.
+          </p>
+
+          <!-- Botones siempre visibles en el banner -->
+          <div class="hero__actions">
+            <a href="#trabajo" class="button button--primary">Ver proyectos</a>
+            <a href="#contacto" class="button button--ghost">Hablemos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadrícula biográfica y foto circular de café -->
+      <div class="hero__bio-grid" id="perfil">
+        <div class="hero__bio-text">
+          <p class="hero__manifesto">
+            «Criterio en la mirada. Rigor en el código.»
+          </p>
+          <p>
+            Dirijo <strong>Jotezte Studio</strong>, mi espacio independiente de diseño e interfaces. Uno la composición y el ritmo de las artes visuales con la ingeniería web: productos digitales donde cada margen, peso tipográfico y transición responde a una función clara y creativa.
+          </p>
+        </div>
+        <div class="hero__bio-divider" aria-hidden="true"></div>
+        <div class="hero__bio-photo">
+          <img
+            src="images/cafe.png"
+            alt="J Luis Estévez"
+            class="hero__photo-img"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" aria-label="Perfil">
+      <div class="about__inner">
+        <div class="about__heading">
+          <h2>Pensar la imagen. Construir la interacción.</h2>
+        </div>
+        <div class="about__body">
+          <p>
+            Combino la mirada compositiva de las artes visuales con el método empírico del diseño digital: experimentar, medir la jerarquía en pantalla y comprobar que cada elemento aporte valor antes de llegar a producción.
+          </p>
+          <p>
+            En desarrollo web traduzco esa calibración visual en código limpio y componentes funcionales. Construyo productos digitales donde el diseño visual guía al usuario y la arquitectura de software asegura su rendimiento.
+          </p>
+          <dl class="about__stack">
+            <div class="about__stack-item">
+              <dt>Lenguaje</dt>
+              <dd>HTML5 · CSS3 · JavaScript · Bases de datos</dd>
+            </div>
+            <div class="about__stack-item">
+              <dt>Disciplina</dt>
+              <dd>Figma · Wireframing · Sistemas de diseño</dd>
+            </div>
+            <div class="about__stack-item">
+              <dt>Origen</dt>
+              <dd>Desarrollo de Software · Artes Visuales · UI &amp; UX</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="work" id="trabajo" aria-label="Proyectos seleccionados">
+      <div class="section-head">
+        <h2 class="section-head__title">Proyectos seleccionados</h2>
+        <p class="section-head__count">03</p>
+      </div>
+
+      <ul class="work-list">
+        <!-- Proyecto 1 -->
+        <li class="work-item">
+          <a href="#" class="work-item__link">
+            <div class="work-item__main">
+              <span class="work-item__year">2025</span>
+              <h3 class="work-item__title">Caramelos — Plataforma &amp; App para mascotas</h3>
+              <p class="work-item__desc">
+                Diseño de producto y maquetación de interfaz: arquitectura de información, flujos de cuidado y prototipado interactivo orientado a la experiencia del usuario y su mascota.
+              </p>
+            </div>
+            <div class="work-item__meta">
+              <div class="work-item__tags">
+                <span class="tag">Figma</span>
+                <span class="tag">UI/UX</span>
+                <span class="tag">En maquetación</span>
+              </div>
+              <span class="work-item__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Proyecto 2 -->
+        <li class="work-item">
+          <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer" class="work-item__link">
+            <div class="work-item__main">
+              <span class="work-item__year">2024</span>
+              <h3 class="work-item__title">Jotezte Studio — Práctica independiente &amp; Diseño editorial</h3>
+              <p class="work-item__desc">
+                Dirección visual y producción gráfica freelance: diseño de identidad, maquetación de libros digitales e impresos, portadas editoriales y composición gráfica con estricto criterio tipográfico.
+              </p>
+            </div>
+            <div class="work-item__meta">
+              <div class="work-item__tags">
+                <span class="tag">Diseño Editorial</span>
+                <span class="tag">Dirección de Arte</span>
+                <span class="tag">Branding</span>
+              </div>
+              <span class="work-item__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Proyecto 3 -->
+        <li class="work-item">
+          <a href="#" class="work-item__link">
+            <div class="work-item__main">
+              <span class="work-item__year">2024</span>
+              <h3 class="work-item__title">Sistema de diseño — identidad editorial</h3>
+              <p class="work-item__desc">
+                Guía de estilo y tokens de diseño para una marca editorial, documentando tipografía, espaciado y color como reglas reutilizables, no decisiones sueltas.
+              </p>
+            </div>
+            <div class="work-item__meta">
+              <div class="work-item__tags">
+                <span class="tag">Design Systems</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Figma</span>
+              </div>
+              <span class="work-item__arrow" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <footer class="site-footer" id="contacto" aria-label="Contacto">
+    <div class="site-footer__inner">
+      <div class="site-footer__contact">
+        <h2>Transformemos ideas en software.</h2>
+        <a href="mailto:joteztestudio@gmail.com" class="site-footer__email">joteztestudio@gmail.com</a>
+      </div>
+      <div class="site-footer__links">
+        <div class="site-footer__col">
+          <span class="site-footer__label">Perfiles</span>
+          <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://github.com/JLuisEstevez" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/j-luis-estevez-salcedo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="site-footer__col">
+          <span class="site-footer__label">Créditos</span>
+          <p>Diseñado y desarrollado por J Luis Estévez</p>
+          <p>&copy; <span data-year></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ COMMAND MENU (Cmd + K) ============ -->
+  <div class="cmd-menu" id="cmd-menu" role="dialog" aria-modal="true" aria-label="Menú de comandos" hidden>
+    <div class="cmd-menu__backdrop" data-cmd-close></div>
+    <div class="cmd-menu__panel">
+      <div class="cmd-menu__search">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" class="cmd-menu__icon">
+          <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input
+          type="text"
+          id="cmd-input"
+          class="cmd-menu__input"
+          placeholder="Escribe un comando o busca algo..."
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <kbd class="cmd-menu__badge">ESC</kbd>
+      </div>
+      <div class="cmd-menu__list" role="listbox" id="cmd-list">
+        <div class="cmd-menu__group-label">Navegación</div>
+        <button type="button" class="cmd-menu__item is-selected" role="option" data-action="navigate" data-target="#trabajo">
+          <span class="cmd-menu__item-title">Proyectos seleccionados</span>
+          <span class="cmd-menu__item-badge">Ir</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="navigate" data-target="#perfil">
+          <span class="cmd-menu__item-title">Perfil / Manifiesto</span>
+          <span class="cmd-menu__item-badge">Ir</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="navigate" data-target="#contacto">
+          <span class="cmd-menu__item-title">Contacto</span>
+          <span class="cmd-menu__item-badge">Ir</span>
+        </button>
+        <div class="cmd-menu__group-label">Sistema de diseño</div>
+        <button type="button" class="cmd-menu__item" role="option" data-action="theme" data-theme="industrial">
+          <span class="cmd-menu__item-title">Tema: Industrial (Oscuro)</span>
+          <span class="cmd-menu__item-badge">T-01</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="theme" data-theme="contrast">
+          <span class="cmd-menu__item-title">Tema: Día (Editorial Paper)</span>
+          <span class="cmd-menu__item-badge">T-02</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="theme" data-theme="warm">
+          <span class="cmd-menu__item-title">Tema: Cálido (Crema)</span>
+          <span class="cmd-menu__item-badge">T-03</span>
+        </button>
+        <div class="cmd-menu__group-label">Acciones</div>
+        <button type="button" class="cmd-menu__item" role="option" data-action="copy-email">
+          <span class="cmd-menu__item-title">Copiar correo electrónico</span>
+          <span class="cmd-menu__item-badge" id="cmd-copy-badge">Copiar</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="link" data-url="https://github.com/JLuisEstevez">
+          <span class="cmd-menu__item-title">Abrir perfil de GitHub</span>
+          <span class="cmd-menu__item-badge">↗</span>
+        </button>
+        <button type="button" class="cmd-menu__item" role="option" data-action="link" data-url="https://www.linkedin.com/in/j-luis-estevez-salcedo/">
+          <span class="cmd-menu__item-title">Abrir LinkedIn</span>
+          <span class="cmd-menu__item-badge">↗</span>
+        </button>
+      </div>
+      <div class="cmd-menu__footer">
+        <span>Navega con <kbd>↑</kbd> <kbd>↓</kbd></span>
+        <span>Selecciona con <kbd>↵</kbd></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
