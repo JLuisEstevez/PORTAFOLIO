@@ -7,7 +7,7 @@
   <meta name="description" content="Portafolio de J Luis Estévez, desarrollador frontend en formación con base en artes visuales e ingeniería industrial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <!-- FAVICON -->
   <link rel="icon" type="image/png" href="images/logo-blanco.png">
   <link rel="stylesheet" href="style.css">
@@ -67,7 +67,7 @@
           </h1>
 
           <p class="hero__lede">
-            Transformo requerimientos y prototipos en interfaces accesibles, fluidas y estructuradas con código mantenible.
+            Transformo diseño y estrategia en interfaces accesibles y fluidas, sostenidas por un código limpio y mantenible.
           </p>
 
           <!-- Botones siempre visibles en el banner -->
@@ -85,7 +85,7 @@
             «Criterio en la mirada. Rigor en el código.»
           </p>
           <p>
-            Dirijo <strong>Jotezte Studio</strong>, mi espacio independiente de diseño e interfaces. Uno la composición y el ritmo de las artes visuales con la ingeniería web: productos digitales donde cada margen, peso tipográfico y transición responde a una función clara y creativa.
+            <strong>Jotezte Studio:</strong> Es mi laboratorio independiente. Aquí uno la composición de las artes visuales con la ingeniería web. Creo productos digitales donde cada margen, peso tipográfico y transición responde a una función clara y creativa.
           </p>
         </div>
         <div class="hero__bio-divider" aria-hidden="true"></div>
@@ -98,148 +98,507 @@
           >
         </div>
       </div>
-    </section>
+      <br>
+      <br>
+      <div class="content-divider" aria-hidden="true"></div>
 
-    <!-- ============ ABOUT ============ -->
+    <!-- ============ ABOUT: DUALIDAD ARTISTA / DESARROLLADOR ============ -->
     <section class="about" aria-label="Perfil">
       <div class="about__inner">
-        <div class="about__heading">
-          <h2>Pensar la imagen. Construir la interacción.</h2>
-        </div>
-        <div class="about__body">
-          <p>
-            Combino la mirada compositiva de las artes visuales con el método empírico del diseño digital: experimentar, medir la jerarquía en pantalla y comprobar que cada elemento aporte valor antes de llegar a producción.
-          </p>
-          <p>
-            En desarrollo web traduzco esa calibración visual en código limpio y componentes funcionales. Construyo productos digitales donde el diseño visual guía al usuario y la arquitectura de software asegura su rendimiento.
-          </p>
-          <dl class="about__stack">
-            <div class="about__stack-item">
-              <dt>Lenguaje</dt>
-              <dd>HTML5 · CSS3 · JavaScript · Bases de datos</dd>
-            </div>
-            <div class="about__stack-item">
-              <dt>Disciplina</dt>
-              <dd>Figma · Wireframing · Sistemas de diseño</dd>
-            </div>
-            <div class="about__stack-item">
-              <dt>Origen</dt>
-              <dd>Desarrollo de Software · Artes Visuales · UI &amp; UX</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </section>
+        
+        <!-- Bloque de 2 columnas balanceadas -->
+        <div class="about__columns">
+          <!-- Columna 1: Artista Visual -->
+          <article class="about__card">
+            <header class="about__card-header">
+              <span class="about__card-tag">El Artista</span>
+              <h3 class="about__card-title">Pensar la imagen</h3>
+            </header>
+            <p class="about__card-text">
+              Combino la mirada compositiva y el método empírico del diseño digital. Experimento, mido las jerarquías en pantalla y compruebo que cada elemento aporte valor antes de la producción.
+            </p>
+          </article>
 
-    <!-- ============ SELECTED WORK ============ -->
+          <!-- Columna 2: Ingeniero / Desarrollador -->
+          <article class="about__card">
+            <header class="about__card-header">
+              <span class="about__card-tag">El Desarrollador</span>
+              <h3 class="about__card-title">Construir la interacción</h3>
+            </header>
+            <p class="about__card-text">
+              Traduzco esa calibración visual en código limpio y componentes funcionales. Construyo sistemas donde el diseño guía al usuario y la arquitectura de software asegura su rendimiento.
+            </p>
+          </article>
+        </div>
+
+      <!-- ============ MARQUESINA DE SKILLS & HERRAMIENTAS ============ -->
+        <div class="skills-ticker" aria-label="Tecnologías y herramientas creativas">
+          <div class="skills-ticker__track">
+            
+            <!-- GRUPO 1 -->
+            <div class="skills-ticker__group">
+              
+              <!-- React (Framework) -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"></ellipse>
+                  <circle cx="12" cy="12" r="1.8" fill="currentColor"></circle>
+                </svg>
+                <span>React</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- JavaScript -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6v4a2 2 0 0 1-2 2H8"></path>
+                  <path d="M16 4v16"></path>
+                </svg>
+                <span>JavaScript</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- HTML5 & CSS3 -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m4 3 2 15 6 3 6-3 2-15H4z"></path>
+                  <path d="M8 8h8l-.5 5H9.5l.3 3 2.2.6 2.2-.6.2-2"></path>
+                </svg>
+                <span>HTML5 / CSS3</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- Figma -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+                </svg>
+                <span>Figma</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- Adobe Creative Cloud -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h4.5l5.5 16H9.5L8 14H5.5L4 19.5H2L4 4z"></path>
+                  <path d="M20 4h-4.5L10 20h4.5l1.5-6h2.5l1.5 5.5H22L20 4z"></path>
+                </svg>
+                <span>Adobe Suite</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- Affinity (Designer / Photo / Publisher) -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2 2 19.5h20L12 2z"></path>
+                  <path d="m8.5 13.5 7 0"></path>
+                  <path d="m10 10.5 4 0"></path>
+                </svg>
+                <span>Affinity Suite</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- CapCut -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                  <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                  <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+                <span>CapCut</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+              <!-- Filmora -->
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m10 9 5 3-5 3V9z"></path>
+                  <line x1="2" y1="8" x2="22" y2="8"></line>
+                </svg>
+                <span>Filmora Video</span>
+              </div>
+              <span class="ticker-star" aria-hidden="true">✦</span>
+
+            </div>
+
+            <!-- GRUPO 2 (Duplicado idéntico para continuidad continua) -->
+            <div class="skills-ticker__group" aria-hidden="true">
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"></ellipse>
+                  <circle cx="12" cy="12" r="1.8" fill="currentColor"></circle>
+                </svg>
+                <span>React</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6v4a2 2 0 0 1-2 2H8"></path>
+                  <path d="M16 4v16"></path>
+                </svg>
+                <span>JavaScript</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m4 3 2 15 6 3 6-3 2-15H4z"></path>
+                  <path d="M8 8h8l-.5 5H9.5l.3 3 2.2.6 2.2-.6.2-2"></path>
+                </svg>
+                <span>HTML5 / CSS3</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                  <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+                  <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+                  <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+                </svg>
+                <span>Figma</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h4.5l5.5 16H9.5L8 14H5.5L4 19.5H2L4 4z"></path>
+                  <path d="M20 4h-4.5L10 20h4.5l1.5-6h2.5l1.5 5.5H22L20 4z"></path>
+                </svg>
+                <span>Adobe Suite</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2 2 19.5h20L12 2z"></path>
+                  <path d="m8.5 13.5 7 0"></path>
+                  <path d="m10 10.5 4 0"></path>
+                </svg>
+                <span>Affinity Suite</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                  <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                  <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+                <span>CapCut</span>
+              </div>
+              <span class="ticker-star">✦</span>
+
+              <div class="ticker-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m10 9 5 3-5 3V9z"></path>
+                  <line x1="2" y1="8" x2="22" y2="8"></line>
+                </svg>
+                <span>Filmora Video</span>
+              </div>
+              <span class="ticker-star">✦</span>
+            </div>
+
+          </div>
+        </div>
+        </section>
+
+    <!-- ============ SELECTED WORK (3 COLUMNAS EN FILA) ============ -->
     <section class="work" id="trabajo" aria-label="Proyectos seleccionados">
       <div class="section-head">
         <h2 class="section-head__title">Proyectos seleccionados</h2>
-        <p class="section-head__count">03</p>
       </div>
+      
+      <div class="work-grid">
+        
+        <!-- PROYECTO 01 -->
+        <article class="work-card">
+          <a href="#" class="work-card__link">
+            <!-- 01 Cuadro contenedor de imagen -->
+            <div class="work-card__media">
+              <span class="work-card__index">01</span>
+              <!-- Reemplaza con la ruta de tu captura real -->
+              <img src="images/proyecto-1.jpg" alt="Plataforma Caramelos" class="work-card__img" loading="lazy">
+            </div>
 
-      <ul class="work-list">
-        <!-- Proyecto 1 -->
-        <li class="work-item">
-          <a href="#" class="work-item__link">
-            <div class="work-item__main">
-              <span class="work-item__year">2025</span>
-              <h3 class="work-item__title">Caramelos — Plataforma &amp; App para mascotas</h3>
-              <p class="work-item__desc">
-                Diseño de producto y maquetación de interfaz: arquitectura de información, flujos de cuidado y prototipado interactivo orientado a la experiencia del usuario y su mascota.
+            <!-- Contenido textual -->
+            <div class="work-card__body">
+              <div class="work-card__meta-top">
+                <span class="work-card__year">2025</span>
+              </div>
+              <h3 class="work-card__title">Dulce Secreto — Plataforma Web & Sistema de Pedidos</h3>
+              <p class="work-card__desc">
+                Desarrollo y maquetación de plataforma web comercial para repostería artesanal. Estructuración de arquitectura de información, catálogo interactivo y componentes modulares pensados para escalabilidad.
               </p>
             </div>
-            <div class="work-item__meta">
-              <div class="work-item__tags">
-                <span class="tag">Figma</span>
+
+            <!-- Footer de la tarjeta: Tags + Botón rombo -->
+            <div class="work-card__footer">
+              <div class="work-card__tags">
+                <span class="tag">JavaScript</span>
                 <span class="tag">UI/UX</span>
-                <span class="tag">En maquetación</span>
+                <span class="tag">Frontend</span>
               </div>
-              <span class="work-item__arrow" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <span class="work-card__arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
             </div>
           </a>
-        </li>
+        </article>
 
-        <!-- Proyecto 2 -->
-        <li class="work-item">
-          <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer" class="work-item__link">
-            <div class="work-item__main">
-              <span class="work-item__year">2024</span>
-              <h3 class="work-item__title">Jotezte Studio — Práctica independiente &amp; Diseño editorial</h3>
-              <p class="work-item__desc">
-                Dirección visual y producción gráfica freelance: diseño de identidad, maquetación de libros digitales e impresos, portadas editoriales y composición gráfica con estricto criterio tipográfico.
+        <!-- PROYECTO 02 -->
+        <article class="work-card">
+          <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer" class="work-card__link">
+            <!-- 02 Cuadro contenedor de imagen -->
+            <div class="work-card__media">
+              <span class="work-card__index">02</span>
+              <!-- Reemplaza con la ruta de tu captura real -->
+              <img src="images/proyecto-2.jpg" alt="Jotezte Studio Editorial" class="work-card__img" loading="lazy">
+            </div>
+
+            <!-- Contenido textual -->
+            <div class="work-card__body">
+              <div class="work-card__meta-top">
+                <span class="work-card__year">2024</span>
+              </div>
+              <h3 class="work-card__title">La Era del Scroll — Libro & Diseño Editorial</h3>
+              <p class="work-card__desc">
+                Dirección de arte y maquetación editorial física y digital. Composición visual fundamentada en criterios tipográficos estrictos, jerarquías de lectura y diseño de identidad de portada.
               </p>
             </div>
-            <div class="work-item__meta">
-              <div class="work-item__tags">
+
+            <!-- Footer de la tarjeta: Tags + Botón rombo -->
+            <div class="work-card__footer">
+              <div class="work-card__tags">
                 <span class="tag">Diseño Editorial</span>
                 <span class="tag">Dirección de Arte</span>
-                <span class="tag">Branding</span>
+                <span class="tag">Maquetación</span>
               </div>
-              <span class="work-item__arrow" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <span class="work-card__arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
             </div>
           </a>
-        </li>
+        </article>
 
-        <!-- Proyecto 3 -->
-        <li class="work-item">
-          <a href="#" class="work-item__link">
-            <div class="work-item__main">
-              <span class="work-item__year">2024</span>
-              <h3 class="work-item__title">Sistema de diseño — identidad editorial</h3>
-              <p class="work-item__desc">
-                Guía de estilo y tokens de diseño para una marca editorial, documentando tipografía, espaciado y color como reglas reutilizables, no decisiones sueltas.
+        <!-- PROYECTO 03 -->
+        <article class="work-card">
+          <a href="#" class="work-card__link">
+            <!-- 03 Cuadro contenedor de imagen -->
+            <div class="work-card__media">
+              <span class="work-card__index">03</span>
+              <!-- Reemplaza con la ruta de tu captura real -->
+              <img src="images/proyecto-3.png" alt="Sistema de diseño editorial" class="work-card__img" loading="lazy">
+            </div>
+
+            <!-- Contenido textual -->
+            <div class="work-card__body">
+              <div class="work-card__meta-top">
+                <span class="work-card__year">2024</span>
+              </div>
+              <h3 class="work-card__title">Caramelos — App & Plataforma para Mascotas</h3>
+              <p class="work-card__desc">
+                Diseño de producto digital y flujos de usuario orientados al cuidado animal. Creación de prototipos interactivos, wireframes en alta fidelidad y especificaciones de interfaz para desarrollo.
               </p>
             </div>
-            <div class="work-item__meta">
-              <div class="work-item__tags">
-                <span class="tag">Design Systems</span>
-                <span class="tag">CSS</span>
+
+            <!-- Footer de la tarjeta: Tags + Botón rombo -->
+            <div class="work-card__footer">
+              <div class="work-card__tags">
                 <span class="tag">Figma</span>
+                <span class="tag">Prototipado</span>
+                <span class="tag">UI/UX</span>
               </div>
-              <span class="work-item__arrow" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <span class="work-card__arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
             </div>
           </a>
-        </li>
-      </ul>
-    </section>
-  </main>
+        </article>
 
-  <!-- ============ FOOTER / CONTACT ============ -->
-  <footer class="site-footer" id="contacto" aria-label="Contacto">
-    <div class="site-footer__inner">
-      <div class="site-footer__contact">
-        <h2>Transformemos ideas en software.</h2>
-        <a href="mailto:joteztestudio@gmail.com" class="site-footer__email">joteztestudio@gmail.com</a>
       </div>
-      <div class="site-footer__links">
-        <div class="site-footer__col">
-          <span class="site-footer__label">Perfiles</span>
-          <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://github.com/JLuisEstevez" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/j-luis-estevez-salcedo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </section>
+    
+  </section>
+  
+  <!-- ============ FORMACIÓN & CERTIFICACIONES ============ -->
+    <section class="credentials" id="formacion" aria-label="Formación y certificaciones">
+      <div class="section-head">
+        <h2 class="section-head__title">Trayectoria &amp; Formación</h2>
+      </div>
+
+      <div class="credentials-grid">
+        
+       <!-- Tarjeta 1: Título Principal -->
+        <article class="credential-card">
+          <div class="credential-card__header">
+            <span class="credential-badge credential-badge--degree">Título Profesional</span>
+            <span class="credential-year">2026 — Presente</span>
+          </div>
+          <h3 class="credential-title">Tecnólogo en Análisis y Desarrollo de Software</h3>
+          <p class="credential-institution">SENA (Servicio Nacional de Aprendizaje)</p>
+          <p class="credential-desc">
+            Formación tecnológica en el ciclo completo de desarrollo de software: análisis de requisitos, diseño de arquitectura cliente-servidor, modelado de bases de datos relacionales, construcción de aplicaciones a la medida y control de calidad.
+          </p>
+          <div class="credential-footer">
+            <div class="credential-tags">
+              <span class="tag">Desarrollo Web</span>
+              <span class="tag">Bases de Datos</span>
+              <span class="tag">Calidad &amp; Testing</span>
+            </div>
+            <!-- BOTÓN INTERACTIVO CUADRADO -> ROMBO -->
+            <span class="credential-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2: Título Base / Creativo -->
+        <article class="credential-card">
+          <div class="credential-card__header">
+            <span class="credential-badge credential-badge--degree">Educación Superior</span>
+            <span class="credential-year">2022 — Presente</span>
+          </div>
+          <h3 class="credential-title">Maestro en Artes Visuales</h3>
+          <p class="credential-institution">ITM (Instituto Tecnológico Metropolitano)</p>
+          <p class="credential-desc">
+            Estudio de lenguajes visuales, teoría de la percepción y sistemas compositivos. Aplicación de principios de diseño editorial, dirección de arte y narrativa visual al desarrollo de productos web con alto criterio estético y funcional.
+          </p>
+          <div class="credential-footer">
+            <div class="credential-tags">
+              <span class="tag">Dirección de Arte</span>
+              <span class="tag">Semiótica Visual</span>
+              <span class="tag">Criterio Estético</span>
+
+              
+            </div>
+            <!-- BOTÓN INTERACTIVO CUADRADO -> ROMBO -->
+            <span class="credential-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3: Especialización / UI & UX -->
+        <article class="credential-card">
+          <div class="credential-card__header">
+            <span class="credential-badge credential-badge--cert">Especialización</span>
+            <span class="credential-year">2026</span>
+          </div>
+          <h3 class="credential-title">UI / UX Design Specialization</h3>
+          <p class="credential-institution">CalArts · Coursera / Especialización</p>
+          <p class="credential-desc">
+            Especialización enfocada en el ciclo completo de diseño de producto digital: desde la estrategia e arquitectura de la información hasta wireframing, prototipado interactivo y elementos visuales de interfaz (UI). Dominio de metodología de diseño centrado en el usuario y pruebas de usabilidad.
+          </p>
+          <div class="credential-footer">
+            <div class="credential-tags">
+              <span class="tag">Wireframing</span>
+              <span class="tag">Usabilidad</span>
+              <span class="tag">Arquitectura Web</span>
+            </div>
+            <!-- BOTÓN INTERACTIVO CUADRADO -> ROMBO -->
+            <span class="credential-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Tarjeta 4: Certificación Frontend -->
+        <article class="credential-card">
+          <div class="credential-card__header">
+            <span class="credential-badge credential-badge--cert">Certificación</span>
+            <span class="credential-year">2026</span>
+          </div>
+          <h3 class="credential-title">Apply Front-End Web Development with HTML, CSS & JS</h3>
+          <p class="credential-institution">EDUCBA · Coursera / Certificación Verificada</p>
+          <p class="credential-desc">
+            Construcción modular de sitios web profesionales. Dominio de estructuración semántica, jerarquía visual de contenido, animaciones CSS y programación orientada a eventos en JavaScript para enriquecer la interactividad y accesibilidad del usuario.
+          </p>
+          <div class="credential-footer">
+            <div class="credential-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Desarrollo Web Full-Stack</span>
+            </div>
+            <!-- BOTÓN INTERACTIVO CUADRADO -> ROMBO -->
+            <span class="credential-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </article>
         </div>
-        <div class="site-footer__col">
-          <span class="site-footer__label">Créditos</span>
-          <p>Diseñado y desarrollado por J Luis Estévez</p>
-          <p>Medellín - Colombia</p>
-          <p>&copy; <span data-year></span></p>
-        </div>
+        </article>
+
+        </section>
+
+
+<footer class="footer-interactivo">
+  <canvas id="canvas-arte-codigo"></canvas>
+  
+  <div class="footer-contenido">
+    <!-- LADO IZQUIERDO: Título y Correo -->
+    <div class="footer-izq">
+      <h2 class="footer-titulo">
+        El arte del diseño.<br>
+        <span class="color-naranja">La lógica del software.</span>
+      </h2>
+      <a href="mailto:joteztestudio@gmail.com" class="footer-correo">joteztestudio@gmail.com</a>
+    </div>
+
+    <!-- LADO DERECHO: Perfiles y Créditos -->
+    <div class="footer-der">
+      <!-- Columna Perfiles -->
+      <div class="footer-columna">
+        <h4 class="footer-subtitulo">Perfiles</h4>
+        <ul class="footer-lista">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+      
+      <!-- Columna Créditos -->
+      <div class="footer-columna">
+        <h4 class="footer-subtitulo">Créditos</h4>
+        <p>Diseñado y desarrollado por J Luis Estévez</p>
+        <p>Medellín - Colombia</p>
+        <p>© 2026</p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
+  
 
 <!-- ============ BARRA LATERAL DE REDES SOCIALES (ESTILO MOCKUP) ============ -->
   <aside class="social-sidebar" aria-label="Redes sociales y contacto">
@@ -247,7 +606,6 @@
     <nav class="social-sidebar__nav">
       <!-- GitHub -->
       <a href="https://github.com/JLuisEstevez" target="_blank" rel="noopener noreferrer" class="social-sidebar__link" title="GitHub">
-        <span class="social-sidebar__label">GitHub</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
         </svg>
@@ -255,7 +613,6 @@
 
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/j-luis-estevez-salcedo/" target="_blank" rel="noopener noreferrer" class="social-sidebar__link" title="LinkedIn">
-        <span class="social-sidebar__label">LinkedIn</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
           <rect x="2" y="9" width="4" height="12"></rect>
@@ -265,7 +622,6 @@
 
       <!-- Behance / Instagram Estudio -->
       <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer" class="social-sidebar__link" title="Instagram / Behance">
-        <span class="social-sidebar__label">Instagram</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -275,7 +631,7 @@
 
       <!-- Email directo -->
       <a href="mailto:joteztestudio@gmail.com" class="social-sidebar__link" title="Enviar correo">
-        <span class="social-sidebar__label">Email</span>
+
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="4" width="20" height="16" rx="2"></rect>
           <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -284,6 +640,7 @@
     </nav>
   </aside>
 
+  
   <!-- ============ COMMAND MENU (Cmd + K) ============ -->
   <div class="cmd-menu" id="cmd-menu" role="dialog" aria-modal="true" aria-label="Menú de comandos" hidden>
     <div class="cmd-menu__backdrop" data-cmd-close></div>
@@ -349,7 +706,13 @@
       </div>
     </div>
   </div>
-
   <script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+

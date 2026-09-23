@@ -14,17 +14,17 @@ TOKENS
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
-  .hero__title {
-  /* Uso 'Space Grotesk' que es idéntica a mi mockup; si falla, salta a sans-serif limpia (nunca a Times New Roman) */
-  font-family: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-weight: 700;
-  text-transform: uppercase;       /* Mayúsculas idénticas a tu mockup */
-  letter-spacing: 0.09em;          /* Separación limpia entre caracteres */
-  line-height: 1.08;
-  color: #f4f4f5 !important;       /* Blanco puro para contrastar sobre el banner negro */
-  font-size: clamp(2rem, 4.5vw + 0.8rem, 3.8rem);
+.hero__title,
+.hero-banner .hero__title {
+  font-family: var(--font-mono) !important; /* <- Aplica JetBrains Mono idéntica al eyebrow */
+  font-weight: 500;                          /* Peso óptico nativo de JetBrains Mono */
+  text-transform: uppercase;                /* Mayúsculas consistentes con el estilo del mockup */
+  letter-spacing: -0.02em;                  /* Espaciado cerrado característico de código */
+  line-height: 1.1;
+  color: #f4f4f5 !important;                /* Blanco limpio sobre el fondo oscuro */
+  font-size: clamp(1.75rem, 3.8vw + 0.5rem, 3.25rem);
   margin-bottom: 1.5rem;
-  max-width: 650px;
+  max-width: 980px;
   min-height: 1.15em;
   display: inline-block;
 }
@@ -439,8 +439,14 @@ BIOGRAFÍA & FOTO CIRCULAR (cafe.png) CON GLITCH ORIGINAL
   font-family: var(--font-mono);
   font-size: var(--fs-small);
   font-style: italic;
-  color: var(--accent);
-  margin-bottom: 1rem;
+  color: var(--accent);            /* Naranja para jerarquía editorial */
+  
+  /* 1. Sangría hacia la derecha */
+  padding-left: 6.5rem;             /* Desplaza el texto a la derecha */
+  border-left: 2px solid var(--border); /* (Opcional) línea guía sutil de sangría */
+
+  /* 2. Espaciado inferior de 2 líneas */
+  margin-bottom: 6.25rem;           /* Equivale a ~2 renglones de separación con el párrafo */
 }
 
 .hero__bio-text p {
@@ -611,123 +617,196 @@ ANIMACIÓN DE PARPADEO OCULAR (2 rápidos, 1 lento y apertura final)
 }
 
 /* ==========================================================================
-SECTION HEAD & WORK LIST
+SELECTED WORK (3 COLUMNAS EN FILA CON TARJETAS E IMÁGENES)
 ========================================================================== */
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-block: clamp(3rem, 8vw, 5rem) 1.5rem;
-}
 
 .section-head__title {
-  font-size: var(--fs-h2);
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  font-size: clamp(1.35rem, 1.8vw + 0.5rem, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.015em;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.section-head__count {
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+.work-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-30px);
+}
+
+.work-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 1. Cuadro de imagen de proyecto (Aspect Ratio 16:10) */
+.work-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  margin-bottom: 1.25rem;
+}
+
+.work-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+.work-card:hover .work-card__img {
+  filter: grayscale(0%) contrast(110%);
+  transform: scale(1.04);
+}
+
+/* Indicador 01, 02, 03 en la esquina superior */
+.work-card__index {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  background-color: var(--bg-elevated);
+  color: var(--text-primary);
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Cuerpo del texto */
+.work-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.work-card__year {
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   color: var(--text-secondary);
+  display: inline-block;
+  margin-bottom: 0.4rem;
 }
 
-.work-list { border-top: 1px solid var(--border); }
-.work-item { border-bottom: 1px solid var(--border); }
+.work-card__title {
+  font-size: clamp(1.05rem, 1.2vw + 0.5rem, 1.25rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
 
-.work-item__link {
+.work-card__desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Footer: Rectángulos de etiquetas + Botón de rombo interactivo */
+.work-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding: clamp(1.75rem, 4vw, 2.75rem) 0;
-  transition: background-color var(--duration) var(--ease-out);
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
-.work-item__main {
-  display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: 0.5rem 1.5rem;
-  max-width: 640px;
-}
-
-.work-item__year {
-  font-family: var(--font-mono);
-  font-size: var(--fs-small);
-  color: var(--text-secondary);
-  padding-top: 0.2em;
-}
-
-.work-item__title {
-  grid-column: 2;
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.work-item__desc {
-  grid-column: 2;
-  color: var(--text-secondary);
-  font-size: var(--fs-small);
-  line-height: 1.6;
-  max-width: 48ch;
-}
-
-.work-item__meta {
+.work-card__tags {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 0.35rem;
 }
 
-.work-item__tags { display: none; gap: 0.5rem; }
-.tag {
+.work-card .tag {
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: 0.6875rem;
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  padding: 0.25rem 0.625rem;
-  white-space: nowrap;
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+  background-color: var(--bg);
 }
 
-.work-item__arrow {
+/* 1. Cuadrado en estado normal */
+.work-card__arrow {
   display: grid;
   place-items: center;
   width: 2.25rem;
   height: 2.25rem;
   border: 1px solid var(--border);
   color: var(--text-secondary);
+  background-color: var(--bg);
+  flex-shrink: 0;
   transform: rotate(0deg);
   transition: transform var(--duration) var(--ease-out),
               border-color var(--duration) var(--ease-out),
+              background-color var(--duration) var(--ease-out),
               color var(--duration) var(--ease-out);
 }
 
-.work-item__link:hover .work-item__arrow,
-.work-item__link:focus-visible .work-item__arrow {
-  border-color: var(--accent);
-  color: var(--accent);
+/* 2. La flecha interior también tiene transición suave */
+.work-card__arrow svg {
+  transform: rotate(0deg);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+/* 3. AL PASAR EL MOUSE (HOVER):
+   - El contenedor gira 45deg y se convierte en rombo naranja.
+   - La flecha rota exactamente a la par (+45deg adicionales) para orientarse 100% horizontal (→). */
+.work-card:hover .work-card__arrow {
   transform: rotate(45deg);
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
 }
 
-@media (min-width: 860px) {
-  .work-item__tags { display: flex; }
+.work-card:hover .work-card__arrow svg {
+  transform: rotate(0deg); /* Lleva la flecha diagonal a posición horizontal fija */
 }
 
-@media (max-width: 640px) {
-  .work-item__link {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-  .work-item__meta {
-    width: 100%;
-    justify-content: space-between;
+/* ==========================================================================
+RESPONSIVE: De 3 columnas en Desktop a 1 columna en móviles
+========================================================================== */
+@media (max-width: 992px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
 /* ==========================================================================
-ABOUT
+ABOUT (DOS COLUMNAS SIMÉTRICAS: ARTISTA & DESARROLLADOR)
 ========================================================================== */
 .about {
   padding-block: var(--space-section);
@@ -735,56 +814,157 @@ ABOUT
 }
 
 .about__inner {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Grilla en dos columnas de igual ancho */
+.about__columns {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
 }
 
-.about__heading h2 {
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  max-width: 20ch;
+.about__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.about__body p {
-  color: var(--text-secondary);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  max-width: 62ch;
-  margin-bottom: 1.25rem;
+.about__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.about__stack {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-}
-
-.about__stack-item dt {
+/* Etiqueta técnica monoespaciada en acento naranja */
+.about__card-tag {
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  color: var(--text-secondary);
-  margin-bottom: 0.375rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.about__stack-item dd {
-  font-size: var(--fs-small);
+/* Título de la columna */
+.about__card-title {
+  font-size: clamp(1.35rem, 1.8vw + 0.5rem, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
-@media (min-width: 860px) {
-  .about__inner {
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 4rem;
+/* Párrafo descriptivo fluido */
+.about__card-text {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+MARQUESINA INFINITA (SKILLS TICKER)
+========================================================================== */
+.skills-ticker {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3.5rem;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-elevated);
+  position: relative;
+  /* Efecto de desvanecimiento sutil en los extremos izquierdo y derecho */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.skills-ticker__track {
+  display: flex;
+  width: max-content;
+  user-select: none;
+}
+
+.skills-ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  animation: ticker-slide 20s linear infinite;
+  will-change: transform;
+}
+
+/* Se pausa la marquesina si el usuario pasa el cursor por encima */
+.skills-ticker:hover .skills-ticker__group {
+  animation-play-state: paused;
+}
+
+/* Elemento individual: Logo + Nombre */
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  white-space: nowrap;
+}
+
+.ticker-item svg {
+  stroke: var(--text-secondary);
+  transition: stroke var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+.ticker-item:hover svg {
+  stroke: var(--accent);
+  transform: scale(1.15);
+}
+
+/* Estrella separadora naranja */
+.ticker-star {
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* Animación de desplazamiento continuo hacia la izquierda */
+@keyframes ticker-slide {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Adaptación responsive en móviles */
+@media (max-width: 768px) {
+  .about__columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
   .about__stack {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
-
 /* ==========================================================================
 FOOTER
 ========================================================================== */
@@ -1000,7 +1180,7 @@ BARRA LATERAL DE REDES SOCIALES (EN COLUMNA - MOCKUP)
   position: fixed;
   left: clamp(1rem, 2.5vw, 2.5rem);
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-93%);
   z-index: 40;
   display: flex;
   flex-direction: column;
@@ -1011,7 +1191,7 @@ BARRA LATERAL DE REDES SOCIALES (EN COLUMNA - MOCKUP)
 /* Línea naranja vertical decorativa como en tu mockup */
 .social-sidebar__accent {
   width: 2px;
-  height: 48px;
+  height: 30px;
   background: var(--accent);
   border-radius: 2px;
   box-shadow: 0 0 8px rgba(249, 115, 22, 0.4);
@@ -1034,30 +1214,20 @@ BARRA LATERAL DE REDES SOCIALES (EN COLUMNA - MOCKUP)
   text-decoration: none;
 }
 
-/* Texto micro encima de cada logo (GitHub, LinkedIn, etc.) */
-.social-sidebar__label {
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: -0.02em;
-  opacity: 0.6;
-  transition: opacity var(--duration) var(--ease-out);
-  user-select: none;
-}
 
 .social-sidebar__link svg {
   transition: stroke var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  width: 26x;
+  height: 26px;
 }
 
 /* Efecto hover */
 .social-sidebar__link:hover {
   color: var(--text-primary);
-  transform: translateX(3px);
+  transform: translateX(13px) scale(1.6);
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-.social-sidebar__link:hover .social-sidebar__label {
-  opacity: 1;
-  color: var(--accent);
-}
 
 .social-sidebar__link:hover svg {
   stroke: var(--accent);
@@ -1067,5 +1237,292 @@ BARRA LATERAL DE REDES SOCIALES (EN COLUMNA - MOCKUP)
 @media (max-width: 1024px) {
   .social-sidebar {
     display: none;
+  }
+}
+
+/* Divisor con los mismos márgenes del contenedor */
+.content-divider {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================================================
+FORMACIÓN & CERTIFICACIONES (GRID MODULAR)
+========================================================================== */
+.credentials {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+
+  padding: clamp(1.5rem, 3vw, 2rem);
+  transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+.credential-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-30px);
+}
+
+.credential-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Etiquetas técnicas superiores */
+.credential-badge {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.credential-badge--degree {
+  color: var(--accent);
+  background-color: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.credential-badge--cert {
+  color: var(--text-secondary);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.credential-year {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-secondary);
+}
+
+.credential-title {
+  font-size: clamp(1.15rem, 1.4vw + 0.5rem, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.credential-institution {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.credential-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.credential-footer .tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  background-color: var(--bg);
+}
+
+/* Adaptación responsive */
+@media (max-width: 768px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.credential-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinea los tags a la izquierda y el botón a la derecha */
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.credential-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Botón interactivo: Cuadrado base */
+.credential-arrow {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background-color: var(--bg);
+  flex-shrink: 0;
+  transform: rotate(0deg);
+  transition: transform var(--duration) var(--ease-out),
+              border-color var(--duration) var(--ease-out),
+              background-color var(--duration) var(--ease-out),
+              color var(--duration) var(--ease-out);
+}
+
+.credential-arrow svg {
+  transform: rotate(0deg);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+/* Al pasar el cursor sobre la tarjeta:
+   El botón rota a rombo en naranja y la flecha queda horizontal */
+.credential-card:hover .credential-arrow {
+  transform: rotate(45deg);
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.credential-card:hover .credential-arrow svg {
+  transform: rotate(0deg);
+}
+
+
+
+/*BANNER INTERACTIVO DE ARTE Y CÓDIGO (FONDO ANIMADO)*/
+
+.footer-interactivo {
+  position: relative;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 100px 50px;
+  overflow: hidden;
+  min-height: 40vh; /* Da suficiente espacio para pintar */
+  display: flex;
+  align-items: center; /* Centra todo verticalmente */
+}
+
+#canvas-arte-codigo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footer-contenido {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Empuja el texto a la izq y los créditos a la der */
+  align-items: flex-end; /* Alinea los elementos por debajo */
+  flex-wrap: wrap; /* Para que se adapte bien en celulares */
+  gap: 3rem;
+}
+
+/* --- Lado Izquierdo --- */
+.footer-titulo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+.color-naranja {
+  color: #ff5500;
+}
+
+.footer-correo {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #ff5500;
+  padding-bottom: 5px;
+}
+
+/* --- Lado Derecho --- */
+.footer-der {
+  display: flex;
+  gap: 4rem; /* Espacio entre Perfiles y Créditos */
+}
+
+.footer-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-subtitulo {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #888888; /* Color grisáceo que tenías antes */
+  margin-bottom: 0.5rem;
+}
+
+.footer-columna p,
+.footer-lista a {
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-decoration: none;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-lista {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-lista a:hover {
+  color: #ff5500; /* Se pone naranja al pasar el mouse */
+}
+
+/* --- Responsive (Para teléfonos) --- */
+@media (max-width: 768px) {
+  .footer-contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-titulo {
+    font-size: 2.5rem;
+  }
+  .footer-der {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
   }
 }
