@@ -646,9 +646,9 @@ SELECTED WORK (3 COLUMNAS EN FILA CON TARJETAS E IMÁGENES)
   transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
 }
 
-.work-card:hover {
+.credential-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-30px);
+  transform: scale(1.02); /* Ajusta a 1.03 o 1.04 si quieres que crezca un poco más */
 }
 
 .work-card__link {
@@ -1279,7 +1279,7 @@ FORMACIÓN & CERTIFICACIONES (GRID MODULAR)
 
 .credential-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-30px);
+  transform: scale(1.03);
 }
 
 .credential-card__header {
@@ -1510,6 +1510,11 @@ FORMACIÓN & CERTIFICACIONES (GRID MODULAR)
 .footer-lista a:hover {
   color: #ff5500; /* Se pone naranja al pasar el mouse */
 }
+.footer-der {
+  display: flex;
+  gap: 4rem;
+}
+
 
 /* --- Responsive (Para teléfonos) --- */
 @media (max-width: 768px) {
