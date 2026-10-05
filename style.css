@@ -1528,6 +1528,18 @@ FORMACIÓN & CERTIFICACIONES (GRID MODULAR)
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
    MODAL (LIGHTBOX) PARA DIPLOMAS Y CERTIFICADOS
 ========================================================================== */
@@ -1603,10 +1615,12 @@ FORMACIÓN & CERTIFICACIONES (GRID MODULAR)
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Evitar conflictos si el botón rombo venía como etiqueta 'a' o 'span' */
+/* Quita los bordes por defecto que le pone el navegador a la etiqueta <button> */
 button.credential-arrow {
-  background: none;
+  background-color: var(--bg);
   cursor: pointer;
+  padding: 0;
+  outline: none;
 }
 
 @media (max-width: 768px) {

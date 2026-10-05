@@ -539,9 +539,6 @@
           </div>
         </article>
 
-
-        
-
         <!-- Tarjeta 4: Certificación Frontend IBM -->
         <article class="credential-card">
           <div class="credential-card__header">
@@ -594,10 +591,6 @@
           </div>
         </article>
 
-
-
-        
-
         <!-- Tarjeta 6: Diplomado en Community Management -->
         <article class="credential-card">
           <div class="credential-card__header">
@@ -615,16 +608,16 @@
               <span class="tag">Gestión de Comunidades</span>
               <span class="tag">Comunicación Web</span>
             </div>
-            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL CON LA IMAGEN ESPECÍFICA -->
-<button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/Diplomado_community_management.jpg" onclick="openCertModal(this)">
-  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-    <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL -->
+            <button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/Diplomado_community_management.jpg" onclick="openCertModal(this)">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
         </article>
 
-          <!-- ============ MODAL PARA CERTIFICADOS ============ -->
+<!-- ============ MODAL PARA CERTIFICADOS ============ -->
 <div class="cert-modal" id="certModal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="cert-modal__backdrop" onclick="closeCertModal()"></div>
   <div class="cert-modal__content">
@@ -637,6 +630,10 @@
     <img id="certImage" src="" alt="Vista previa del certificado" class="cert-modal__img">
   </div>
 </div>
+
+
+
+
 
       </div><!-- /.credentials-grid -->
     </section>
@@ -799,8 +796,16 @@
   </div>
   <script src="main.js"></script>
 
+
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
