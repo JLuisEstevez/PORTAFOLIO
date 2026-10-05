@@ -404,7 +404,7 @@
                 <span class="tag">Maquetación</span>
               </div>
               <!-- Enlace hacia Instagram para el proyecto 2 -->
-              <a href="https://www.instagram.com/artevez.co/" target="_blank" rel="noopener noreferrer" class="work-card__arrow" aria-label="Ver proyecto La Era del Scroll">
+              <a href="https://drive.google.com/drive/folders/16MwV890k2zmgbDdVBJG2_WksnDYmjL6N?usp=drive_link" target="_blank" rel="noopener noreferrer" class="work-card__arrow" aria-label="Ver proyecto La Era del Scroll">
                 <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                   <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -478,11 +478,12 @@
               <span class="tag">Arquitectura</span>
               <span class="tag">Bases de Datos</span>
             </div>
-            <span class="credential-arrow" aria-hidden="true">
+            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL -->
+            <button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/tu-imagen-adso.jpg" onclick="openCertModal(this)">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
+            </button>
           </div>
         </article>
 
@@ -503,11 +504,12 @@
               <span class="tag">Semiótica Visual</span>
               <span class="tag">Criterio Estético</span>
             </div>
-            <span class="credential-arrow" aria-hidden="true">
+            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL -->
+            <button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/tu-imagen-artes.jpg" onclick="openCertModal(this)">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
+            </button>
           </div>
         </article>
 
@@ -528,13 +530,17 @@
               <span class="tag">Usabilidad</span>
               <span class="tag">Arquitectura Web</span>
             </div>
-            <span class="credential-arrow" aria-hidden="true">
+            <!-- BOTÓN INTERACTIVO (IBM abre el link de verificación de Coursera externo) -->
+            <a href="https://www.coursera.org/account/accomplishments/specialization/1JQXDI6MNUJM" target="_blank" rel="noopener noreferrer" class="credential-arrow" aria-label="Verificar certificado de IBM">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
+            </a>
           </div>
         </article>
+
+
+        
 
         <!-- Tarjeta 4: Certificación Frontend IBM -->
         <article class="credential-card">
@@ -553,7 +559,7 @@
               <span class="tag">JavaScript</span>
               <span class="tag">Web Architecture</span>
             </div>
-            <!-- BOTÓN INTERACTIVO CUADRADO -> ROMBO -->
+            <!-- BOTÓN INTERACTIVO (IBM abre el link de verificación de Coursera externo) -->
             <a href="https://coursera.org/verify/BNZS7P4MPJ1Y" target="_blank" rel="noopener noreferrer" class="credential-arrow" aria-label="Verificar certificado de IBM">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
                 <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -579,13 +585,18 @@
               <span class="tag">Composición Visual</span>
               <span class="tag">Identidad Gráfica</span>
             </div>
-            <span class="credential-arrow" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL CON LA IMAGEN ESPECÍFICA -->
+<button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/Diplomado_diseno_digital.jpg" onclick="openCertModal(this)">
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+    <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
           </div>
         </article>
+
+
+
+        
 
         <!-- Tarjeta 6: Diplomado en Community Management -->
         <article class="credential-card">
@@ -604,14 +615,31 @@
               <span class="tag">Gestión de Comunidades</span>
               <span class="tag">Comunicación Web</span>
             </div>
-            <span class="credential-arrow" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
-                <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            <!-- BOTÓN INTERACTIVO PARA ABRIR MODAL CON LA IMAGEN ESPECÍFICA -->
+<button type="button" class="credential-arrow" aria-label="Ver certificado" data-cert-image="images/Diplomado_community_management.jpg" onclick="openCertModal(this)">
+  <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+    <path d="M4 16L16 4M16 4H7M16 4V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
           </div>
         </article>
 
+          <!-- ============ MODAL PARA CERTIFICADOS ============ -->
+<div class="cert-modal" id="certModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="cert-modal__backdrop" onclick="closeCertModal()"></div>
+  <div class="cert-modal__content">
+    <button type="button" class="cert-modal__close" aria-label="Cerrar modal" onclick="closeCertModal()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img id="certImage" src="" alt="Vista previa del certificado" class="cert-modal__img">
+  </div>
+</div>
+
+      </div><!-- /.credentials-grid -->
+    </section>
       </div><!-- /.credentials-grid -->
     </section>
 
@@ -770,6 +798,7 @@
     </div>
   </div>
   <script src="main.js"></script>
+
 </body>
 </html>
 
