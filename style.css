@@ -335,7 +335,7 @@ HERO & BANNER HORIZONTAL EXTENDIDO
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
-  max-width: 580px;
+  max-width: 690px;
   min-height: 1.15em;
   display: inline-block;
 }
@@ -365,10 +365,10 @@ HERO & BANNER HORIZONTAL EXTENDIDO
 .hero__lede,
 .hero-banner .hero__lede {
   color: #c4c4c8 !important;
-  max-width: 520px;
-  font-size: 1.0625rem;
+  max-width: 690px;
+  font-size: 1.0325rem;
   line-height: 1.65;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Acciones y botones siempre visibles */
